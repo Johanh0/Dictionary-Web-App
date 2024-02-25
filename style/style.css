@@ -1,162 +1,163 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 
 :root {
-    color-scheme: light dark;
-    --primary-color: #A445ED;
-    --red-color: #FF5252;
-    --black-color: #2D2D2D;
-    --secondary-black: #1F1F1F;
-    --dark-gray-color: #757575;
-    --gray-color: #F4F4F4;
-    --font-family: "Inter", sans-serif;
+  color-scheme: light dark;
+  --primary-color: #a445ed;
+  --red-color: #ff5252;
+  --black-color: #2d2d2d;
+  --secondary-black: #1f1f1f;
+  --dark-gray-color: #757575;
+  --gray-color: #f4f4f4;
+  --font-family: "Inter", sans-serif;
 }
 
 .light {
-    color-scheme: light;
+  color-scheme: light;
 }
 
 .dark {
-    color-scheme: dark;
+  color-scheme: dark;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    font-size: 62.5%;
-    font-family: var(--font-family);
+  font-size: 62.5%;
+  font-family: var(--font-family);
 }
 
-html[data-darkmode="ligth"] {
-    color-scheme: light;
-    & header .moon-icon svg {
-        fill: none;
-    }
+html[data-darkmode="light"] {
+  color-scheme: light;
+  & header .moon-icon svg {
+    fill: none;
+  }
 }
 
 html[data-darkmode="dark"] {
-    color-scheme: dark;
-    background-color: black;
+  color-scheme: dark;
+  background-color: black;
 
-    & header .moon-icon svg {
-        fill: var(--primary-color);
-        color: var(--primary-color);
-    }
-    
-    & .header-settings_divider {
-        & div {
-            background-color: white;
-        }
-    }
+  & header .moon-icon svg {
+    fill: var(--primary-color);
+    color: var(--primary-color);
+  }
 
-    & .darkMode-toggle .toggle-body {
-        background-color: var(--primary-color);
+  & .header-settings_divider {
+    & div {
+      background-color: white;
     }
+  }
 
-    & .search form {
-        background-color: var(--secondary-black);
-    }
+  & .darkMode-toggle .toggle-body {
+    background-color: var(--primary-color);
+  }
+
+  & .search form {
+    background-color: var(--secondary-black);
+  }
 }
 
-main, header {
-    max-width: 730px;
-    margin: 0 auto;
+main,
+header {
+  max-width: 730px;
+  margin: 0 auto;
 }
 
 svg {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
 }
 
-header .dictionary-icon, .moon-icon {
-    color: var(--dark-gray-color);
+header .dictionary-icon,
+.moon-icon {
+  color: var(--dark-gray-color);
 }
 
 .moon-icon {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .header-settings {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  & .header-settings_dropdown {
+    & select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-color: transparent;
+      border: none;
+      font-size: 1.5rem;
+      font-weight: bolder;
+      padding-right: 20px;
+      background-image: url("../assets/arrow.svg");
+      background-position: center right;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+  }
+
+  & .header-settings_divider {
+    & div {
+      width: 1px;
+      height: 32px;
+      background-color: var(--gray-color);
+    }
+  }
+
+  & .darkMode-toggle .toggle-body {
     display: flex;
     align-items: center;
-    gap: 20px;
+    width: 45px;
+    height: 20px;
+    padding: 0 3px;
+    background-color: var(--dark-gray-color);
+    border-radius: 10px;
 
-    & .header-settings_dropdown {
-        & select {
-            -webkit-appearance: none;
-            -moz-appearance: none; 
-            appearance: none;
-            background-color: transparent;
-            border: none;
-            font-size: 1.5rem;
-            font-weight: bolder;
-            padding-right: 20px; 
-            background-image: url('../assets/arrow.svg'); 
-            background-position: center right; 
-            background-repeat: no-repeat; 
-            cursor: pointer;
-        }
+    & .toggle-btn {
+      width: 15px;
+      height: 15px;
+      background-color: white;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.5s;
+      /* transform: translateX(24px); */
     }
-
-    & .header-settings_divider {
-        & div {
-            width: 1px;
-            height: 32px;
-            background-color: var(--gray-color);
-        }
-    }
-
-    & .darkMode-toggle .toggle-body {
-        display: flex;
-        align-items: center;
-        width: 45px;
-        height: 20px;
-        padding: 0 3px;
-        background-color: var(--dark-gray-color);
-        border-radius: 10px;
-
-        & .toggle-btn {
-            width: 15px;
-            height: 15px;
-            background-color: white;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.5s;
-            /* transform: translateX(24px); */
-        }
-    }
+  }
 }
 
 .search form {
-    display: flex;
-    width: 100%;
-    height: fit-content;
-    padding: 20px 30px;
-    background-color: var(--gray-color);
-    border-radius: 17px;
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  padding: 20px 30px;
+  background-color: var(--gray-color);
+  border-radius: 17px;
 
-    & .search-input {
-        flex-grow: 1;
-        border: none;
-        font-size: 1.7rem;
-        font-weight: bold;
-        background-color: transparent;
-        outline: none;
-    }
+  & .search-input {
+    flex-grow: 1;
+    border: none;
+    font-size: 1.7rem;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+  }
 
-    & label {
-        width: auto;
-        padding: 0 0 0 10px;
-        color: var(--primary-color);
-    }
+  & label {
+    width: auto;
+    padding: 0 0 0 10px;
+    color: var(--primary-color);
+  }
 }
-
